@@ -186,9 +186,12 @@
             alert("Login Successful");
             console.log(response);
             localStorage.setItem("data", JSON.stringify(response));
+            setTimeout(() => {
+              window.location.href = "Home.html";
+            }, 3000);
           },
-          error: function (response) {
-            alert(response);
+          error: async function (response) {
+            await alert(response);
             console.log(response);
           },
         });
